@@ -9,6 +9,11 @@
 #' @export
 #' @return A sequence of q-values for each hypothesis. Users should report the target-hypotheses with q-values less than or equal to their choice of threshold, alpha. If return_frontier = T, additionally the sequence of frontiers will be returned.
 group_walk <- function(winning_scores, labels, all_group_ids, K = 40, return_frontier = FALSE, correction = 1){
+  lengths_all <- lengths(list(winning_scores, labels, all_group_ids))
+  if (length(unique(lengths_all)) > 1){
+    stop("winning_scores, labels, all_group_ids are not of the same length")
+  }
+
   ordered_inds <- order(winning_scores) #record the indices in order of the scores from smallest to largest
   groups_and_labels <- data.frame(all_group_ids[ordered_inds], labels[ordered_inds]) #reorder the group_ids and winning labels according to the ordered score
   colnames(groups_and_labels) <- c('ordered_groups', 'ordered_labels')
