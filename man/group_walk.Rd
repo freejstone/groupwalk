@@ -2,7 +2,7 @@
 % Please edit documentation in R/Group_walk.R
 \name{group_walk}
 \alias{group_walk}
-\title{Implement group-walk algorithm}
+\title{Implements group-walk algorithm}
 \usage{
 group_walk(
   winning_scores,
@@ -27,8 +27,53 @@ group_walk(
 \item{correction}{A correction factor used to in the numerator of the estimated false discovery rate (FDR) (Use 1 for FDR control).}
 }
 \value{
-A sequence of q-values for each hypothesis. Users should report the target-hypotheses with q-values less than or equal to their choice of threshold, alpha. If return_frontier = T, additionally the sequence of frontiers will be returned.
+A sequence of q-values for each hypothesis. If return_frontier = T, additionally the sequence of frontiers will be returned.
 }
 \description{
-Implement group-walk algorithm
+This function returns a list of q-values corresponding to hypotheses that have been partitioned into groups.
+For FDR control, users should report the target-hypotheses with q-values less than or equal to their choice of threshold, alpha.
+}
+\examples{
+create_uncalibrated_hypotheses <- function(m_vec, pi_0_vec, mus, sds) {
+  total <- sum(m_vec)
+  g_total <- length(m_vec)
+  data <- matrix(0, ncol = 4, nrow = total)
+  for (g in 1:length(m_vec)){
+    m <- m_vec[g]
+    pi_0 <- pi_0_vec[g]
+    mu <- mus[g]
+    sd <- sds[g]
+    if (g == 1) {
+      start <- 0
+    } else {
+      start <- sum(m_vec[1:(g - 1)])
+    }
+    targets_nonnull <- rnorm(floor(m*pi_0), mean = mu, sd = sd)
+    targets_null <- rnorm(m - floor(m*pi_0), mean = 0, sd = 1)
+    decoys <- rnorm(m, mean = 0, sd = 1)
+    targets <- c(targets_nonnull, targets_null)
+    W <- pmax(targets, decoys)
+    data[(start + 1):(start + m), 1] <- W
+    data[(start + 1):(start + m), 2] <- g
+    decoy_inds <- which(decoys > targets)
+    inc_native_inds <- (which(targets_null > decoys[(floor(m*pi_0) + 1):m])) + floor(m*pi_0)
+    X <- rep(0, m)
+    X[decoy_inds] <- -1
+    X[inc_native_inds] <- 1
+    Y <- X
+    X[X == 0] <- 1
+    data[(start + 1):(start + m), 3] <- Y
+    data[(start + 1):(start + m), 4] <- X
+  }
+  return(data)
+}
+
+data <- create_uncalibrated_hypotheses(m_vec = rep(1000, 3),
+           pi_0_vec = rep(0.6, 3), mus = c(2.5, 3, 3.5), sds = rep(1, 3))
+
+winning_scores <- data[, 1]
+all_group_ids <- data[, 2]
+labels <- data[, 4]
+q_vals <- group_walk(winning_scores, labels, all_group_ids)
+
 }
