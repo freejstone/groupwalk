@@ -2,7 +2,8 @@ Package: groupwalk
 Title: Implement The Group Walk Algorithm
 Version: 0.0.0.9000
 Authors@R: c(
-    person("Jack", "Freestone", email = "jfre0619@uni.sydney.edu.au", role = c("aut", "cre", "cph")))
+    person("Jack", "Freestone", email = "jfre0619@uni.sydney.edu.au", role = c("aut", "cre", "cph")),
+    person("Uri", "Keich", email = "uri.keich@sydney.edu.au", role = c("aut", "cph")))
 Description: A procedure that allows the user to reject multiple hypotheses in the presence of group structure, while controlling the false discovery rate (FDR). 
     The procedure returns its results in the form of q-values for each hypothesis.
     Users wanting to report on the hypotheses with a threshold of alpha should report the target-hypotheses with q-values less than or equal to alpha.
