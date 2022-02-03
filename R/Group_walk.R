@@ -2,6 +2,7 @@
 #'
 #' This function returns a list of q-values corresponding to hypotheses that have been partitioned into groups.
 #' For FDR control, users should report the target-hypotheses with q-values less than or equal to their choice of threshold, alpha.
+#' For further details about how group-walk works, see: https://www.biorxiv.org/content/10.1101/2022.01.30.478144v1
 #'
 #' @param winning_scores A numerical vector of winning scores generated from the target-decoy competitions for each hypothesis.
 #' @param labels A vector of winning labels indicating whether it was a target (= 1) or a decoy (!= 1) for each hypothesis.

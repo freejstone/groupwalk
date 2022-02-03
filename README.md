@@ -7,10 +7,11 @@
 
 <!-- badges: end -->
 
-The goal of groupwalk is a package containing the group-walk algorithm.
-Group-walk is a procedure for rejecting multiple hypotheses when their
-is a presence of group-structure. Details regarding group-walk and its
-application can be found here:
+The groupwalk package contains the group-walk algorithm. Group-walk is a
+procedure for rejecting multiple hypotheses when their is a presence of
+group-structure. Details regarding group-walk and applications can be
+found here:
+<https://www.biorxiv.org/content/10.1101/2022.01.30.478144v1>
 
 ## Installation
 
