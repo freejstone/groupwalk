@@ -3,10 +3,6 @@
 
 # groupwalk
 
-<!-- badges: start -->
-
-<!-- badges: end -->
-
 The groupwalk package contains the group-walk algorithm. Group-walk is a
 procedure for rejecting multiple hypotheses when their is a presence of
 group-structure. Details regarding group-walk and applications can be

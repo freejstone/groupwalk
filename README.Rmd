@@ -4,19 +4,7 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
-
 # groupwalk
-
-<!-- badges: start -->
-<!-- badges: end -->
 
 The groupwalk package contains the group-walk algorithm. Group-walk is a procedure for rejecting multiple hypotheses when their is a presence of group-structure. Details regarding group-walk and applications can be found here: https://www.biorxiv.org/content/10.1101/2022.01.30.478144v1
 
