@@ -2,5 +2,6 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^README\.Rmd$
+^NEWS\.Rmd$
 ^groupwalk\.Rproj$
 ^\.Rhistory$
