@@ -32,7 +32,6 @@ A sequence of q-values for each hypothesis. If return_frontier = T, additionally
 \description{
 This function returns a list of q-values corresponding to hypotheses that have been partitioned into groups.
 For FDR control, users should report the target-hypotheses with q-values less than or equal to their choice of threshold, alpha.
-For further details about how group-walk works, see: https://www.biorxiv.org/content/10.1101/2022.01.30.478144v1
 }
 \examples{
 create_uncalibrated_hypotheses <- function(m_vec, pi_0_vec, mus, sds) {
