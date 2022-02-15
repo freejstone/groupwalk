@@ -4,7 +4,7 @@ Version: 0.1.0
 Authors@R: c(
     person("Jack", "Freestone", email = "jfre0619@uni.sydney.edu.au", role = c("aut", "cre", "cph")),
     person("Uri", "Keich", email = "uri.keich@sydney.edu.au", role = c("aut", "cph")))
-Description: A procedure that implements atarget-decoy based competition allows the user to reject multiple hypotheses in the presence of group structure, while controlling the false discovery rate (FDR).
+Description: A procedure that implements a target-decoy (knockoff) based competition allows the user to reject multiple hypotheses in the presence of group structure, while controlling the false discovery rate (FDR).
 URL: https://www.biorxiv.org/content/10.1101/2022.01.30.478144v1, https://github.com/freejstone/groupwalk
 License: MIT + file LICENSE
 Encoding: UTF-8
