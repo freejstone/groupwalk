@@ -84,7 +84,7 @@ group_walk <- function(winning_scores, labels, all_group_ids, K = 40, return_fro
 
   switch <- TRUE
 
-  frontiers <- matrix(1, nrow = sum(totals), ncol = 2)
+  frontiers <- matrix(1, nrow = sum(totals), ncol = g_total)
   counter <- 1
 
   while (any(starts <= totals)) {
