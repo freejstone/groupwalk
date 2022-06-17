@@ -7,7 +7,8 @@
 > On windows-x86_64-devel (r-devel), ubuntu-gcc-release (r-release), fedora-clang-devel (r-devel)
   checking CRAN incoming feasibility ... NOTE
   Maintainer: 'Jack Freestone <jfre0619@uni.sydney.edu.au>'
-  New submission
+  
+  Days since last update: 1
 
 > On windows-x86_64-devel (r-devel)
   checking for detritus in the temp directory ... NOTE

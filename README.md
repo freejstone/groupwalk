@@ -5,10 +5,11 @@
 
 The groupwalk package contains the group-walk algorithm. Group-walk is a
 procedure that uses a target-decoy competition framework for rejecting
-multiple hypotheses when their is a presence of group structure.
+multiple hypotheses when there is a presence of group structure.
 Group-walk controls the false discovery rate (FDR) at a user-specified
-threshold. Details regarding group-walk and applications can be found
-here: <https://www.biorxiv.org/content/10.1101/2022.01.30.478144v1>
+threshold. Details regarding group-walk and its applications can be
+found here:
+<https://www.biorxiv.org/content/10.1101/2022.01.30.478144v1>
 
 ## Installation
 
